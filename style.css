@@ -1,0 +1,216 @@
+/* Basic Reset & Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Light grey background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer content */
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Calculator Container */
+.calculator-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    max-width: 1000px; /* Adjust max-width as needed */
+    width: 100%;
+    margin-bottom: 40px; /* Space at the bottom */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+h2 {
+    color: #4a6781;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Grid Layout for Main Panels */
+.calculator-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows panels to stack on smaller screens */
+    gap: 30px;
+}
+
+.input-panel, .output-panel {
+    flex: 1; /* Allow panels to grow/shrink */
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.input-panel {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    gap: 25px;
+}
+
+/* Section Styling */
+.panel-section {
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid #f0f0f0; */ /* Add separator lines if desired */
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 2 columns on wider screens */
+    gap: 15px 25px; /* Row and column gap */
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px; /* Custom checkbox size */
+    height: 18px;
+    accent-color: #007bff; /* Accent color for the checkbox */
+    border-radius: 4px;
+}
+
+/* Dropdown and Input Group */
+.dropdown-group {
+    margin-bottom: 20px;
+}
+
+.dropdown-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.calculator-dropdown,
+.calculator-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: #fff;
+    appearance: none; /* Remove default arrow for select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.calculator-dropdown {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a6781%22%20d%3D%22M287%2C197.962L146.2%2C57.162L5.4%2C197.962h281.6z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+
+/* Output Panel */
+.output-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.output-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1em;
+}
+
+.output-row span:first-child {
+    font-weight: 500;
+    color: #666;
+}
+
+.output-row.detail-row {
+    font-size: 0.9em;
+    color: #777;
+    border-bottom: none;
+}
+.output-row.detail-row span:first-child {
+    font-weight: normal;
+}
+
+
+#selectedCharactersList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+#selectedCharactersList li {
+    padding: 2px 0;
+}
+
+
+.total-cost-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+    text-align: right;
+}
+
+.total-cost-amount {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #007bff; /* Highlight color for total cost */
+    display: block; /* Ensure it takes full width */
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .calculator-grid {
+        flex-direction: column; /* Stack panels vertically on smaller screens */
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr; /* Single column for checkboxes on small screens */
+    }
+
+    .calculator-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .total-cost-amount {
+        font-size: 2em;
+    }
+}

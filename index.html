@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Design Cost Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="calculator-container">
+        <h1>Custom Font Design Cost Calculator</h1>
+
+        <div class="calculator-grid">
+            <div class="input-panel">
+                <section class="character-set-section panel-section">
+                    <h2>Character Set</h2>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="upperCaseLatin" data-cost="4500">
+                            Upper Case Latin
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="lowerCaseLatin" data-cost="4500">
+                            Lower Case Latin
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="extendedLatin" data-cost="900">
+                            Extended Latin
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="italic" data-cost="2000">
+                            Italic
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="numbers" data-cost="600">
+                            Numbers
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="symbols" data-cost="600">
+                            Symbols
+                        </label>
+                        </div>
+                </section>
+
+                <section class="options-section panel-section">
+                    <h2>Options</h2>
+                    <div class="dropdown-group">
+                        <label for="complexity">Complexity</label>
+                        <select id="complexity" class="calculator-dropdown">
+                            <option value="0.0">Simple Sans-Serif</option> <option value="0.5">Serif</option>
+                            <option value="0.6">Script/Display</option>
+                        </select>
+                    </div>
+
+                    </section>
+
+                <section class="styles-exclusivity-section panel-section">
+                    <div class="dropdown-group">
+                        <label for="numWeights">Number of Weights/Styles</label>
+                        <select id="numWeights" class="calculator-dropdown">
+                            <option value="0.0">1</option> <option value="0.5">2-3</option>
+                            <option value="0.6">4-6</option>
+                            <option value="0.7">7+</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown-group">
+                        <label for="exclusivity">Licensing Exclusivity in Years</label>
+                        <select id="exclusivity" class="calculator-dropdown">
+                            <option value="0.0">0 years</option>
+                            <option value="0.3">2-3 years</option>
+                            <option value="0.5">4-6 years</option>
+                            <option value="0.6">7+ years</option>
+                        </select>
+                    </div>
+                </section>
+            </div>
+
+            <div class="output-panel">
+                <h2>Your Estimate</h2>
+                <div class="output-row">
+                    <span>Base Character Set Cost:</span>
+                    <span id="outputBaseCost">€0</span>
+                </div>
+                <div class="output-row detail-row">
+                    <span>Selected Characters:</span>
+                    <ul id="selectedCharactersList">
+                        </ul>
+                </div>
+                <div class="output-row detail-row">
+                    <span>Complexity Multiplier:</span>
+                    <span id="outputComplexityMultiplier">0.0</span>
+                </div>
+                <div class="output-row detail-row">
+                    <span>Weights/Styles Multiplier:</span>
+                    <span id="outputWeightsMultiplier">0.0</span>
+                </div>
+                <div class="output-row detail-row">
+                    <span>Exclusivity Multiplier:</span>
+                    <span id="outputExclusivityMultiplier">0.0</span>
+                </div>
+
+                <div class="total-cost-section">
+                    <h3>Total Estimated Cost:</h3>
+                    <span id="totalCost" class="total-cost-amount">€0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
