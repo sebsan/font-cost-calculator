@@ -98,7 +98,7 @@ h3 {
 
 /* Dropdown and Input Group */
 .dropdown-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .dropdown-group label {
@@ -129,6 +129,71 @@ h3 {
     cursor: pointer;
 }
 
+/* Stepper Input Styling */
+.stepper-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Ensures buttons and input stay within the border-radius */
+    width: fit-content; /* Adjusts width to content */
+    margin-top: 5px; /* Adjust as needed for spacing */
+}
+
+.stepper-input button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.stepper-input button:hover {
+    background-color: #e0e0e0;
+}
+
+.stepper-input button:active {
+    background-color: #d0d0d0;
+}
+
+.stepper-input input[type="number"] {
+    border: none;
+    text-align: center;
+    padding: 8px 0; /* Adjust padding as needed */
+    width: 60px; /* Adjust width to fit numbers up to 100 */
+    font-size: 1em;
+    -moz-appearance: textfield; /* Hide default stepper arrows in Firefox */
+}
+
+/* Hide default stepper arrows in Chrome/Safari/Edge */
+.stepper-input input[type="number"]::-webkit-outer-spin-button,
+.stepper-input input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Styles for the new 'Styles' category heading */
+.category-group h3 {
+    margin-top: 15px; /* Space above new category heading */
+    margin-bottom: 5px; /* Space below category heading */
+    color: #555; /* Slightly muted color for sub-category heading */
+}
+
+/* Styles for inline checkbox group (to make Italic and Slanted side-by-side) */
+.checkbox-inline-group {
+    display: flex;
+    gap: 20px; /* Space between checkboxes */
+    /* You might want to remove padding/margin from .checkbox-group if it causes issues */
+    /* .checkbox-group { padding: 10px 0; display: flex; flex-wrap: wrap; gap: 10px; } */
+    /* You might need to adjust existing .checkbox-group or .checkbox-item styles if they conflict */
+}
+
+/* Ensure individual checkbox items also have proper spacing/sizing if needed */
+.checkbox-inline-group .checkbox-item {
+    /* Add specific styles here if needed, e.g., flex: 1 for equal width */
+}
 
 /* Output Panel */
 .output-panel {

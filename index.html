@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Design Cost Calculator</title>
+    <title>Font Design Calculator</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
     <div class="calculator-container">
-        <h1>Custom Font Design Cost Calculator</h1>
+        <h1>Custom Font Calculator</h1>
 
         <div class="calculator-grid">
             <div class="input-panel">
@@ -28,10 +28,6 @@
                             Extended Latin
                         </label>
                         <label class="checkbox-item">
-                            <input type="checkbox" id="italic" data-cost="2000">
-                            Italic
-                        </label>
-                        <label class="checkbox-item">
                             <input type="checkbox" id="numbers" data-cost="600">
                             Numbers
                         </label>
@@ -39,38 +35,60 @@
                             <input type="checkbox" id="symbols" data-cost="600">
                             Symbols
                         </label>
-                        </div>
+                    </div>
                 </section>
 
                 <section class="options-section panel-section">
                     <h2>Options</h2>
+
+                    <div class="dropdown-group">
+                        <label>Styles</label>
+                        <div class="checkbox-inline-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="italicStyle" data-multiplier="1.0">
+                                Italic
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="slantedStyle" data-multiplier="0.5">
+                                Slanted
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="dropdown-group">
                         <label for="complexity">Complexity</label>
                         <select id="complexity" class="calculator-dropdown">
-                            <option value="0.0">Simple Sans-Serif</option> <option value="0.5">Serif</option>
+                            <option value="0.0">Simple Sans-Serif</option>
+                            <option value="0.5">Serif</option>
                             <option value="0.6">Script/Display</option>
                         </select>
                     </div>
 
-                    </section>
-
-                <section class="styles-exclusivity-section panel-section">
                     <div class="dropdown-group">
-                        <label for="numWeights">Number of Weights/Styles</label>
-                        <select id="numWeights" class="calculator-dropdown">
-                            <option value="0.0">1</option> <option value="0.5">2-3</option>
-                            <option value="0.6">4-6</option>
-                            <option value="0.7">7+</option>
+                        <label for="numMasters">Number of Masters</label>
+                        <select id="numMasters" class="calculator-dropdown">
+                            <option value="0">2</option>
+                            <option value="0.7">4</option>
+                            <option value="2.8">6</option>
+                            <option value="6.3">8</option>
+                            <option value="11.2">10</option>
                         </select>
                     </div>
 
                     <div class="dropdown-group">
-                        <label for="exclusivity">Licensing Exclusivity in Years</label>
-                        <select id="exclusivity" class="calculator-dropdown">
-                            <option value="0.0">0 years</option>
-                            <option value="0.3">2-3 years</option>
-                            <option value="0.5">4-6 years</option>
-                            <option value="0.6">7+ years</option>
+                        <label for="numWeights">Number of Weights</label>
+                        <div class="stepper-input">
+                            <button type="button" id="decrementWeights">-</button>
+                            <input type="number" id="numWeights" value="1" min="1" max="100" readonly>
+                            <button type="button" id="incrementWeights">+</button>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-group">
+                        <label for="exclusivity">Licensing Exclusivity</label> <select id="exclusivity" class="calculator-dropdown">
+                            <option value="0.0"></option>           <option value="0.25">1 year</option>
+                            <option value=".5">5 years</option>
+                            <option value="1">Unlimited</option>
                         </select>
                     </div>
                 </section>
@@ -92,8 +110,20 @@
                     <span id="outputComplexityMultiplier">0.0</span>
                 </div>
                 <div class="output-row detail-row">
+                    <span>Masters Multiplier:</span>
+                    <span id="outputMastersMultiplier">0.0</span>
+                </div>
+                <div class="output-row detail-row">
                     <span>Weights/Styles Multiplier:</span>
-                    <span id="outputWeightsMultiplier">0.0</span>
+                    <span id="outputWeightsMultiplier">0.00</span>
+                </div>
+                <div class="output-row detail-row">
+                    <span>Italic Multiplier:</span>
+                    <span id="outputItalicMultiplier">0.0</span>
+                </div>
+                <div class="output-row detail-row">
+                    <span>Slanted Multiplier:</span>
+                    <span id="outputSlantedMultiplier">0.0</span>
                 </div>
                 <div class="output-row detail-row">
                     <span>Exclusivity Multiplier:</span>
