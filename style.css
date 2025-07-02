@@ -253,6 +253,19 @@ h3 {
     margin-top: 10px;
 }
 
+    /* Disclaimer text styling */
+    .disclaimer-text {
+        font-size: 0.85em; /* Slightly smaller text */
+        color: #666; /* Muted color */
+        margin-top: 20px; /* Space above the disclaimer */
+        padding-top: 15px; /* Padding for visual separation from line */
+        border-top: 1px solid #eee; /* A subtle separator line */
+        line-height: 1.4; /* Improve readability */
+        text-align: justify; /* Justify text for a cleaner block appearance */
+    }
+    
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .calculator-grid {
